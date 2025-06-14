@@ -14,12 +14,14 @@ import {
   BookOpen,
   Heart,
 } from "lucide-react";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 import Navigation from "@/components/Navigation";
 import ProjectCard from "@/components/ProjectCard";
 import ExperienceCard from "@/components/ExperienceCard";
 import SkillBadge from "@/components/SkillBadge";
 import ScrollToTop from "@/components/ScrollToTop";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import ErrorMessage from "@/components/ErrorMessage";
 
 // Lazy load 3D components for better performance
 const Hero3D = lazy(() => import("@/components/Hero3D"));
@@ -27,10 +29,25 @@ const ParticlesBackground = lazy(
   () => import("@/components/ParticlesBackground"),
 );
 
-const { personal, experience, education, skills, projects, interests } =
-  portfolioData;
-
 const Index = () => {
+  const { data: portfolioData, loading, error } = usePortfolioData();
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  if (error || !portfolioData) {
+    return (
+      <ErrorMessage
+        message={error || "Failed to load portfolio data"}
+        onRetry={() => window.location.reload()}
+      />
+    );
+  }
+
+  const { personal, experience, education, skills, projects, interests } =
+    portfolioData;
+
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Particles Background */}
@@ -194,7 +211,9 @@ const Index = () => {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Projects Completed</span>
-                      <span className="text-purple-400 font-medium">10+</span>
+                      <span className="text-purple-400 font-medium">
+                        {projects.length}+
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Current Role</span>
