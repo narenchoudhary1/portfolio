@@ -1,9 +1,9 @@
 export const portfolioData = {
   personal: {
     name: "Naren Choudhary",
-    title: "MERN Developer",
+    title: "Software Engineer",
     email: "narenchoudhary5566@gmail.com",
-    phone: "+91 7230965443",
+    phone: "+91 6377359121",
     location: "Jaipur, Rajasthan",
     github: "nagendra-choudhary",
     linkedin: "nagendra-choudhary",
