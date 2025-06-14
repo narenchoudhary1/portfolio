@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X, Github, Linkedin, Mail, MapPin } from "lucide-react";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -16,6 +16,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const { data: portfolioData } = usePortfolioData();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,6 +50,23 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
+  // Show loading state if data is not available yet
+  if (!portfolioData) {
+    return (
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex-shrink-0">
+              <div className="w-32 h-6 bg-gray-600 animate-pulse rounded"></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+
+  const { personal } = portfolioData;
+
   return (
     <>
       <nav
@@ -64,7 +82,7 @@ export default function Navigation() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                {portfolioData.personal.name}
+                {personal.name}
               </span>
             </div>
 
@@ -94,7 +112,7 @@ export default function Navigation() {
             {/* Social Links */}
             <div className="hidden md:flex items-center space-x-4">
               <a
-                href={`https://github.com/${portfolioData.personal.github}`}
+                href={`https://github.com/${personal.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -102,7 +120,7 @@ export default function Navigation() {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href={`https://linkedin.com/in/${portfolioData.personal.linkedin}`}
+                href={`https://linkedin.com/in/${personal.linkedin}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -110,7 +128,7 @@ export default function Navigation() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href={`mailto:${portfolioData.personal.email}`}
+                href={`mailto:${personal.email}`}
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Mail className="h-5 w-5" />
@@ -155,7 +173,7 @@ export default function Navigation() {
               {/* Mobile Social Links */}
               <div className="flex items-center justify-center space-x-6 pt-4 pb-2">
                 <a
-                  href={`https://github.com/${portfolioData.personal.github}`}
+                  href={`https://github.com/${personal.github}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -163,7 +181,7 @@ export default function Navigation() {
                   <Github className="h-6 w-6" />
                 </a>
                 <a
-                  href={`https://linkedin.com/in/${portfolioData.personal.linkedin}`}
+                  href={`https://linkedin.com/in/${personal.linkedin}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -171,7 +189,7 @@ export default function Navigation() {
                   <Linkedin className="h-6 w-6" />
                 </a>
                 <a
-                  href={`mailto:${portfolioData.personal.email}`}
+                  href={`mailto:${personal.email}`}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Mail className="h-6 w-6" />

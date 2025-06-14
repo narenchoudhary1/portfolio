@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Clock, Users } from "lucide-react";
-import { PortfolioProject } from "@/data/portfolio";
+import { PortfolioProject } from "@/hooks/usePortfolioData";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {

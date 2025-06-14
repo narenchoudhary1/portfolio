@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Calendar } from "lucide-react";
-import { Experience } from "@/data/portfolio";
+import { Experience } from "@/hooks/usePortfolioData";
 import { cn } from "@/lib/utils";
 
 interface ExperienceCardProps {
