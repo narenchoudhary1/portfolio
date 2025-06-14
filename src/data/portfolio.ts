@@ -91,6 +91,7 @@ export const portfolioData = {
       "Caddy",
       "AWS S3",
       "AWS CloudWatch",
+      "Cloudflare",
     ],
     soft: [
       "Positivity",
