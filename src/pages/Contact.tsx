@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 import Navigation from "@/components/Navigation";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import ErrorMessage from "@/components/ErrorMessage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -19,13 +21,28 @@ import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const navigate = useNavigate();
-  const { personal } = portfolioData;
+  const { data: portfolioData, loading, error } = usePortfolioData();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  if (error || !portfolioData) {
+    return (
+      <ErrorMessage
+        message={error || "Failed to load contact data"}
+        onRetry={() => window.location.reload()}
+      />
+    );
+  }
+
+  const { personal } = portfolioData;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

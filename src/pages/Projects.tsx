@@ -1,12 +1,29 @@
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 import ProjectCard from "@/components/ProjectCard";
 import Navigation from "@/components/Navigation";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import ErrorMessage from "@/components/ErrorMessage";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
   const navigate = useNavigate();
+  const { data: portfolioData, loading, error } = usePortfolioData();
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  if (error || !portfolioData) {
+    return (
+      <ErrorMessage
+        message={error || "Failed to load projects data"}
+        onRetry={() => window.location.reload()}
+      />
+    );
+  }
+
   const { projects } = portfolioData;
 
   return (
