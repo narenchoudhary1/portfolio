@@ -1,0 +1,180 @@
+{
+  "personal": {
+    "name": "Naren Choudhary",
+    "title": "MERN Developer",
+    "email": "narenchoudhary5566@gmail.com",
+    "phone": "+91 7230965443",
+    "location": "Jaipur, Rajasthan",
+    "github": "nagendra-choudhary",
+    "linkedin": "nagendra-choudhary",
+    "website": "Naren Choudhary",
+    "bio": "Full-Stack development program graduate adept at playing a key role in conceptualizing, designing, and optimizing E-commerce websites as part of enhancing user experience. Proficient in streamlining features & functionalities in collaboration with the team to deliver complete solutions."
+  },
+  "experience": [
+    {
+      "title": "Full Stack Developer",
+      "company": "Bosc Tech Labs",
+      "duration": "2 years 6 months",
+      "location": "Remote",
+      "type": "Full-time",
+      "description": [
+        "Developed end-to-end web applications using MERN stack technologies",
+        "Collaborated with cross-functional teams to deliver scalable solutions",
+        "Implemented responsive design patterns and modern UI/UX principles",
+        "Optimized application performance and user experience",
+        "Mentored junior developers and conducted code reviews"
+      ]
+    },
+    {
+      "title": "MERN Developer",
+      "company": "Freelance",
+      "duration": "2022 - Present",
+      "location": "Remote",
+      "type": "Freelance",
+      "description": [
+        "Developed solutions with frameworks like Javascript, NoSQL, and HTML",
+        "Structured back-end codes in Node.js for new software",
+        "Created responsive and user-friendly web pages using React",
+        "Integrated and collaborated with teams to deliver new features"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Full Stack Web Development Course",
+      "institution": "Masai School",
+      "duration": "Apr '22 - Mar '23",
+      "location": "Bengaluru, IN"
+    },
+    {
+      "degree": "Bachelor's Degree",
+      "institution": "PDUS University, Sikar",
+      "duration": "Apr '18 - Aug '22",
+      "location": "Raj, IN"
+    }
+  ],
+  "skills": {
+    "technical": [
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Redux",
+      "HTML5",
+      "CSS3",
+      "TailwindCSS",
+      "Bootstrap",
+      "Chakra UI",
+      "Material UI",
+      "Git",
+      "RESTful API",
+      "AJAX",
+      "JSON",
+      "React Hooks",
+      "Java",
+      "Data Structures & Algorithms",
+      "OOP",
+      "TSED",
+      "TypeORM",
+      "MySQL",
+      "AWS RDS",
+      "AWS EC2",
+      "Firebase",
+      "Google Cloud Functions",
+      "Nginx",
+      "Caddy",
+      "AWS S3",
+      "AWS CloudWatch",
+      "Cloudflare"
+    ],
+    "soft": [
+      "Positivity",
+      "Time Management",
+      "Communication",
+      "Teamwork",
+      "Problem-solving",
+      "Adaptability",
+      "Leadership",
+      "Active Listening"
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "TrendPulseZone Blog",
+      "description": "A modern blog website built in just 2 days featuring trending topics, responsive design, and optimized performance.",
+      "tech": ["React", "Next.js", "TailwindCSS", "Vercel"],
+      "link": "https://www.trendpulsezone.com",
+      "github": "",
+      "image": "/placeholder.svg",
+      "featured": true,
+      "timeline": "2 days",
+      "highlights": [
+        "Rapid development in 2 days",
+        "Modern responsive design",
+        "SEO optimized",
+        "Fast loading performance"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Bohemian Traders Clone",
+      "description": "Clone of BohemainTraders.com - a clothing and accessories e-commerce website with full shopping functionality.",
+      "tech": [
+        "HTML",
+        "CSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "React",
+        "Redux",
+        "Chakra UI",
+        "JavaScript"
+      ],
+      "link": "#",
+      "github": "#",
+      "image": "/placeholder.svg",
+      "featured": true,
+      "timeline": "5 days",
+      "teamSize": "4 developers",
+      "highlights": [
+        "User authentication (Sign in/Sign up)",
+        "Category-wise product listing",
+        "Product filtration system",
+        "Shopping cart functionality",
+        "Multiple payment options",
+        "Collaborative team project"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "LIVE-LARQ Clone",
+      "description": "E-commerce website clone with comprehensive shopping features and modern UI design.",
+      "tech": ["HTML", "CSS", "React", "Redux", "Chakra UI", "JavaScript"],
+      "link": "#",
+      "github": "#",
+      "image": "/placeholder.svg",
+      "featured": true,
+      "timeline": "5 days",
+      "teamSize": "3 developers",
+      "highlights": [
+        "Responsive user interface",
+        "Product catalog with filters",
+        "User account management",
+        "Shopping cart and checkout",
+        "Payment gateway integration",
+        "Team collaboration"
+      ]
+    }
+  ],
+  "interests": [
+    "Online Games",
+    "Listening to music",
+    "Watching movies",
+    "3D Animation",
+    "Web Technologies"
+  ]
+}
