@@ -96,8 +96,7 @@ const Index = () => {
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10"
+                  className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0"
                   onClick={() =>
                     document
                       .getElementById("projects")
